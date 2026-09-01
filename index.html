@@ -35,7 +35,7 @@
       font-family: 'Ubuntu', sans-serif;
     }
 
-    /* Header & Navigaatio */
+    /* Yläpalkki ja Navigaatio */
     header {
       position: sticky;
       top: 0;
@@ -54,12 +54,6 @@
       align-items: center;
       gap: 0.5rem;
       text-decoration: none;
-    }
-
-    .logo-img {
-      height: 32px;
-      width: auto;
-      display: none;
     }
 
     .logo-text {
@@ -87,7 +81,7 @@
       color: var(--primary-orange);
     }
 
-    /* Pääsisältöalue */
+    /* Pääsisältö */
     main {
       max-width: 900px;
       margin: 0 auto;
@@ -130,3 +124,414 @@
       position: relative;
       display: inline-block;
     }
+
+    .glow-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 60%;
+      background-color: var(--primary-orange);
+      opacity: 0.35;
+      filter: blur(25px);
+      pointer-events: none;
+    }
+
+    .highlight {
+      color: var(--primary-orange);
+      position: relative;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    ul.feature-list {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    ul.feature-list li {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    ul.feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-orange);
+      font-weight: bold;
+    }
+
+    .cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+      max-width: 450px;
+    }
+
+    .cta-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--primary-orange);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 1.1rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      background-color: var(--primary-orange-hover);
+    }
+
+    .phone-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .brand-badges {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+
+    .brand-badge {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .contact-card {
+      background-color: var(--bg-light);
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+      border-radius: 6px;
+      margin-top: 1.5rem;
+    }
+
+    .contact-row {
+      margin-bottom: 1rem;
+    }
+
+    .contact-row strong {
+      color: var(--text-dark);
+      display: inline-block;
+      width: 200px;
+    }
+
+    /* Leijuva päivystysnappi */
+    .floating-badge {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 1000;
+      background: #ffffff;
+      border: 2px solid #f8c2b2;
+      border-right: none;
+      border-radius: 8px 0 0 8px;
+      padding: 0.8rem 1rem;
+      box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background-color: var(--primary-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(232, 83, 36, 0.2);
+    }
+
+    .badge-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .badge-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary-orange);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+      nav {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+      }
+      .contact-row strong {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- YLÄPALKKI -->
+  <header>
+    <a href="#etusivu" class="logo-container" onclick="showPage('etusivu')">
+      <!-- Määritä logo-teksti tai -kuva tästä -->
+      <div class="logo-text">avertas robotics</div>
+    </a>
+    <nav>
+      <a href="#etusivu" onclick="showPage('etusivu')" id="nav-etusivu" class="active">Etusivu</a>
+      <a href="#maaraaikaishuollot" onclick="showPage('maaraaikaishuollot')" id="nav-maaraaikaishuollot">Määräaikaishuollot</a>
+      <a href="#vikakorjaukset" onclick="showPage('vikakorjaukset')" id="nav-vikakorjaukset">Vikakorjaukset</a>
+      <a href="#varaosat" onclick="showPage('varaosat')" id="nav-varaosat">Varaosat</a>
+      <a href="#ohjelmointi" onclick="showPage('ohjelmointi')" id="nav-ohjelmointi">Ohjelmointi & Siirrot</a>
+      <a href="#konsultointi" onclick="showPage('konsultointi')" id="nav-konsultointi">Konsultointi</a>
+      <a href="#yhteystiedot" onclick="showPage('yhteystiedot')" id="nav-yhteystiedot">Yhteystiedot</a>
+    </nav>
+  </header>
+
+  <!-- SISÄLTÖ -->
+  <main>
+    <!-- ETUSIVU -->
+    <section id="etusivu" class="page-section active">
+      <h1 class="hero-title">
+        Pitääkö robottisi
+        <span class="glow-container">
+          <span class="glow-bg"></span>
+          <span class="highlight">tuotantolinjan</span>
+        </span>
+        liikkeessä?
+      </h1>
+      <div class="subtitle">Avertas Robot Service Oy – Teollisuusrobottien ammattitaitoinen huolto ja kunnossapito 40 vuoden kokemuksella.</div>
+
+      <p>Avertas Robot Service Oy varmistaa, että yrityksesi teollisuusrobotit ja automaatiosolut toimivat keskeytyksettä, tehokkaasti ja turvallisesti. Tarjoamme täydelliset elinkaaripalvelut aina ennakoivasta määräaikaishuollosta kriittisiin vikakorjauksiin asti.</p>
+
+      <div class="brand-badges">
+        <span class="brand-badge">Motoman / Yaskawa</span>
+        <span class="brand-badge">KUKA</span>
+        <span class="brand-badge">FANUC</span>
+      </div>
+
+      <p>Asiantunteva huolto pidentää laitteiston käyttöikää, vähentää odottamattomia tuotantoseisokeita ja maksimoi investointisi tuoton. Kun kyseessä on robottihuolto, me olemme nopeasti apunasi – koko Suomen alueella.</p>
+
+      <h3 style="margin-top:2rem; margin-bottom:1rem;">Palvelumme lyhyesti:</h3>
+      <ul class="feature-list">
+        <li><strong>Määräaikaishuollot:</strong> Ennakoiva kunnossapito valmistajan ohjeiden mukaan.</li>
+        <li><strong>Vikakorjaukset:</strong> Nopea vianetsintä ja mekaaninen sekä sähköinen korjaus.</li>
+        <li><strong>Varaosapalvelu:</strong> Alkuperäiset varaosat kriittisiin tarpeisiin.</li>
+        <li><strong>Elinkaaripalvelut:</strong> Ohjelmointi, järjestelmäsiirrot ja modernisoinnit.</li>
+        <li><strong>Konsultointi:</strong> Laitteistojen hankintojen ja tarvittavan tekniikan konsultointi.</li>
+      </ul>
+
+      <div class="cta-group">
+        <button class="cta-button" onclick="showPage('yhteystiedot')">Tilaa huolto / Pyydä tarjous &rarr;</button>
+        <!-- MUOKKAA PUHELINNUMEROA TÄSTÄ: tel:numero ja teksti -->
+        <a href="tel:000000000" class="phone-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Huoltopäivystys: 0XX XXX XXXX
+        </a>
+      </div>
+    </section>
+
+    <!-- MÄÄRÄAIKAISHUOLLOT -->
+    <section id="maaraaikaishuollot" class="page-section">
+      <h2 class="section-title">Määräaikaishuollot</h2>
+      <div class="subtitle">Ennakoiva huolto estää kalliit tuotantokatkokset</div>
+      <p>Säännöllinen määräaikaishuolto on halvin vakuutus tuotannon keskeytyksiä vastaan. Suoritamme robottien ja robottisolujen huollot tarkasti valmistajien huolto-ohjelmia noudattaen.</p>
+      
+      <h3 style="margin-top:1.5rem;">Määräaikaishuoltoomme sisältyy aina:</h3>
+      <ul class="feature-list">
+        <li>Akseliston voiteluaineiden ja öljyjen vaihto.</li>
+        <li>Kaapeleiden, liitinten ja suojien tarkastus.</li>
+        <li>Akuston vaihto ja varmuuskopiointi.</li>
+        <li>Mekanismivälysten ja jarrujen toiminnan testaus.</li>
+        <li>Huoltoraportti ja kehitysehdotukset tulevaisuutta varten.</li>
+      </ul>
+
+      <p>Räätälöimme mielellämme yrityksellesi huoltosopimuksen, jolloin me huolehdimme robottienne huoltoaikatauluista puolestanne.</p>
+      
+      <div class="cta-group">
+        <button class="cta-button" onclick="showPage('yhteystiedot')">Pyydä huoltotarjous &rarr;</button>
+      </div>
+    </section>
+
+    <!-- VIKAKORJAUKSET -->
+    <section id="vikakorjaukset" class="page-section">
+      <h2 class="section-title">Vikakorjaukset</h2>
+      <div class="subtitle">Robotti pysähtyi? Kutsu paikalle asiantuntija.</div>
+      <p>Kun tuotanto seisoo viallisen robotin vuoksi, jokainen minuutti maksaa. Avertas Robot Service Oy reagoi vikatilanteisiin nopeasti. Kokeneet kenttähuoltoinsinöörimme on varustettu nykyaikaisilla diagnostiikkavälineillä, joilla viat saadaan paikannettua ja korjattua viipymättä.</p>
+
+      <h3 style="margin-top:1.5rem;">Tarjoamme:</h3>
+      <ul class="feature-list">
+        <li>Sähköisten ja mekaanisten vikojen korjaukset.</li>
+        <li>Ohjauskaappien ja komponenttien testaukset ja vaihdot.</li>
+        <li>Akselistojen ja moottorien vaihdot.</li>
+        <li>Etätuki ja vianetsintä puhelimitse tai suojatun etäyhteyden kautta.</li>
+      </ul>
+
+      <div class="cta-group">
+        <!-- MUOKKAA PUHELINNUMEROA TÄSTÄ: tel:numero -->
+        <a href="tel:000000000" class="cta-button">Soita huoltopäivystykseen &rarr;</a>
+      </div>
+    </section>
+
+    <!-- VARAOSAT -->
+    <section id="varaosat" class="page-section">
+      <h2 class="section-title">Varaosat & Komponentit</h2>
+      <div class="subtitle">Alkuperäisosat takaavat robottisi toimintavarmuuden</div>
+      <p>Käytämme huolloissa ja korjauksissa vain laadukkaita alkuperäisvaraosia tai valmistajan hyväksymiä komponentteja. Kattavan verkostomme ansiosta pystymme toimittamaan harvinaisemmatkin varaosat teollisuusrobotteihin nopealla aikataululla.</p>
+      
+      <div class="cta-group">
+        <button class="cta-button" onclick="showPage('yhteystiedot')">Kysy varaosaa &rarr;</button>
+      </div>
+    </section>
+
+    <!-- OHJELMOINTI JA SIIRROT -->
+    <section id="ohjelmointi" class="page-section">
+      <h2 class="section-title">Ohjelmointi ja Laitteistojen Siirrot</h2>
+      <div class="subtitle">Robotin uusi elämä – Ohjelmointi ja muutostyöt</div>
+      <p>Tuotantotarpeiden muuttuessa vanhaa robottikalustoa ei tarvitse aina uusia. Teemme olemassa oleviin järjestelmiin tarvittavat muutostyöt ja päivitykset.</p>
+
+      <ul class="feature-list">
+        <li><strong>Järjestelmäsiirrot:</strong> Robottien ja kokonaisten solujen turvalliset siirrot tehtaan sisällä tai uusiin toimitiloihin.</li>
+        <li><strong>Ohjelmointi:</strong> Kauttamme vaativatkin robottien ohjelmoinnit.</li>
+      </ul>
+
+      <div class="cta-group">
+        <button class="cta-button" onclick="showPage('yhteystiedot')">Ota yhteyttä ohjelmoinnista &rarr;</button>
+      </div>
+    </section>
+
+    <!-- KONSULTOINTI -->
+    <section id="konsultointi" class="page-section">
+      <h2 class="section-title">Konsultointi</h2>
+      <div class="subtitle">Laitteistojen hankintojen ja tarvittavan tekniikan konsultointi</div>
+      <p>Autamme laitteiston hankintavaiheessa merkkiriippumattomasti robotti-investoinnin onnistumisen satojen toimituksien ja yli 40-vuoden kokemuksella.</p>
+
+      <div class="cta-group">
+        <button class="cta-button" onclick="showPage('yhteystiedot')">Varaa konsultointiaika &rarr;</button>
+      </div>
+    </section>
+
+    <!-- YHTEYSTIEDOT -->
+    <section id="yhteystiedot" class="page-section">
+      <h2 class="section-title">Yhteystiedot</h2>
+      <div class="subtitle">Ota yhteyttä ja tilaa robottihuolto</div>
+      <p>Palvelemme teollisuusasiakkaita joustavasti koko Suomen ja Pohjoismaiden alueella. Toimipisteemme sijaitsee Turussa, josta käsin kenttähuoltomme liikkuu joustavasti sinne, missä apua tarvitaan.</p>
+
+      <div class="contact-card">
+        <div class="contact-row">
+          <strong>Yritys:</strong> Avertas Robot Service Oy
+        </div>
+        <div class="contact-row">
+          <!-- MUOKKAA OSOITETTA TÄSTÄ -->
+          <strong>Käyntiosoite:</strong> Korjasmäentie 7, 20360 Turku
+        </div>
+        <div class="contact-row">
+          <!-- MUOKKAA PUHELINNUMEROA TÄSTÄ -->
+          <strong>Huoltotilaukset & Päivystys:</strong> 0XX XXX XXXX
+        </div>
+        <div class="contact-row">
+          <!-- MUOKKAA SÄHKÖPOSTIA TÄSTÄ -->
+          <strong>Sähköposti:</strong> huolto@avertas.fi
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LEIJUVA PÄIVYSTYSNAPPI -->
+  <div class="floating-badge">
+    <div class="status-dot"></div>
+    <div class="badge-content">
+      <span class="badge-label">24/7 Päivystys</span>
+      <!-- MUOKKAA PUHELINNUMEROA TÄSTÄ: tel:numero ja teksti -->
+      <a href="tel:000000000" class="badge-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        0XX XXX XXXX
+      </a>
+    </div>
+  </div>
+
+  <!-- SIVUVAIHTOEHTOJEN NAVIGOINTISKRIPTI -->
+  <script>
+    function showPage(pageId) {
+      var sections = document.querySelectorAll('.page-section');
+      for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+      }
+
+      var navLinks = document.querySelectorAll('nav a');
+      for (var j = 0; j < navLinks.length; j++) {
+        navLinks[j].classList.remove('active');
+      }
+
+      var selectedSection = document.getElementById(pageId);
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
+
+      var activeNav = document.getElementById('nav-' + pageId);
+      if (activeNav) {
+        activeNav.classList.add('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
