@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vikakorjaukset – Avertas Robot Service Oy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary-orange: #e85324; --primary-orange-hover: #d04316; --text-dark: #111111; --text-muted: #555555; --border-color: #e5e5e5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; }
+    h1, h2, h3, .logo-text { font-family: 'Ubuntu', sans-serif; }
+    header { position: sticky; top: 0; background-color: #ffffff; z-index: 900; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+    .logo-container { text-decoration: none; }
+    .logo-text { font-weight: 700; font-size: 1.25rem; color: var(--primary-orange); text-transform: lowercase; }
+    nav { display: flex; gap: 1.2rem; align-items: center; }
+    nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary-orange); }
+    main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 6rem 1.5rem; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-orange); padding-bottom: 0.5rem; display: inline-block; }
+    .subtitle { font-size: 1.2rem; color: var(--text-dark); font-weight: 600; margin-bottom: 1.5rem; }
+    p { margin-bottom: 1.2rem; color: var(--text-muted); }
+    ul.feature-list { list-style: none; margin: 1.5rem 0; }
+    ul.feature-list li { position: relative; padding-left: 1.8rem; margin-bottom: 0.8rem; color: var(--text-dark); font-weight: 500; }
+    ul.feature-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary-orange); font-weight: bold; }
+    .cta-group { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; max-width: 450px; }
+    .cta-button { display: flex; align-items: center; justify-content: center; background-color: var(--primary-orange); color: #ffffff; text-decoration: none; font-weight: 700; font-size: 0.95rem; padding: 1.1rem; border-radius: 4px; text-transform: uppercase; }
+    .cta-button:hover { background-color: var(--primary-orange-hover); }
+    .floating-badge { position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 1000; background: #ffffff; border: 2px solid #f8c2b2; border-right: none; border-radius: 8px 0 0 8px; padding: 0.8rem 1rem; display: flex; align-items: center; gap: 0.75rem; }
+    .status-dot { width: 10px; height: 10px; background-color: var(--primary-orange); border-radius: 50%; }
+    .badge-content { display: flex; flex-direction: column; }
+    .badge-label { font-size: 0.65rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; }
+    .badge-phone { display: flex; align-items: center; gap: 0.4rem; font-size: 0.95rem; font-weight: 800; color: var(--primary-orange); text-decoration: none; }
+    @media (max-width: 768px) { header { flex-direction: column; align-items: flex-start; gap: 1rem; } nav { flex-wrap: wrap; gap: 0.8rem; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-container"><div class="logo-text">Avertas Robot Service Oy</div></a>
+    <nav>
+      <a href="index.html">Etusivu</a>
+      <a href="maaraaikaishuollot.html">Määräaikaishuollot</a>
+      <a href="vikakorjaukset.html" class="active">Vikakorjaukset</a>
+      <a href="varaosat.html">Varaosat</a>
+      <a href="ohjelmointi.html">Ohjelmointi & Siirrot</a>
+      <a href="konsultointi.html">Konsultointi</a>
+      <a href="yhteystiedot.html">Yhteystiedot</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <h2 class="section-title">Vikakorjaukset</h2>
+      <div class="subtitle">Robotti pysähtyi? Kutsu paikalle asiantuntija.</div>
+      <p>Kun tuotanto seisoo viallisen robotin vuoksi, jokainen minuutti maksaa. Avertas Robot Service Oy reagoi vikatilanteisiin nopeasti. Kokeneet kenttähuoltoinsinöörimme on varustettu nykyaikaisilla diagnostiikkavälineillä, joilla viat saadaan paikannettua ja korjattua viipymättä.</p>
+
+      <h3 style="margin-top:1.5rem;">Tarjoamme:</h3>
+      <ul class="feature-list">
+        <li>Sähköisten ja mekaanisten vikojen korjaukset.</li>
+        <li>Ohjauskaappien ja komponenttien testaukset ja vaihdot.</li>
+        <li>Akselistojen ja moottorien vaihdot.</li>
+        <li>Etätuki ja vianetsintä puhelimitse tai suojatun etäyhteyden kautta.</li>
+      </ul>
+
+      <div class="cta-group">
+        <a href="tel:000000000" class="cta-button">Soita huoltopäivystykseen &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-badge">
+    <div class="status-dot"></div>
+    <div class="badge-content">
+      <span class="badge-label">Päivystys</span>
+      <a href="tel:000000000" class="badge-phone">0XX XXX XXXX</a>
+    </div>
+  </div>
+
+</body>
+</html>
