@@ -7,17 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
-      /* Tekstit ja yhteystiedot */
-      --cfg-company-name: "avertas robot service oy";
-      --cfg-company-fullname: "Avertas Robot Service Oy";
-      --cfg-phone-display: "0XX XXX XXXX";
-      --cfg-address: "Korjasmäentie 7, 20360 Turku";
-      --cfg-email: "huolto@avertas.fi";
-
-      /* Tyylit ja värit */
+      /* TEEMA NÄMÄ VÄRIT VOIT MUUTTAA TÄSTÄ */
       --primary-orange: #e85324;
       --primary-orange-hover: #d04316;
       --text-dark: #111111;
@@ -25,12 +18,7 @@
       --border-color: #e5e5e5;
       --bg-light: #fafafa;
     }
-  </style>
 
-  <style>
-    .phone-link-href { --dummy: 0; }
-  </style>
-  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -51,13 +39,6 @@
     h1, h2, h3, .logo-text {
       font-family: 'Ubuntu', sans-serif;
     }
-
-    /* Automaattisesti CSS-konfiguraatiosta tulostuvat tekstit */
-    .cfg-name::after { content: var(--cfg-company-name); }
-    .cfg-fullname::after { content: var(--cfg-company-fullname); }
-    .cfg-phone::after { content: var(--cfg-phone-display); }
-    .cfg-address::after { content: var(--cfg-address); }
-    .cfg-email::after { content: var(--cfg-email); }
 
     /* Yläpalkki ja Navigaatio */
     header {
@@ -344,9 +325,11 @@
 </head>
 <body>
 
+  <!-- YLÄPALKKI -->
   <header>
     <a href="#etusivu" class="logo-container">
-      <div class="logo-text cfg-name"></div>
+      <!-- CONFIG: LOGO-TEKSTI -->
+      <div class="logo-text">avertas robotics</div>
     </a>
     <nav>
       <a href="#etusivu">Etusivu</a>
@@ -359,7 +342,9 @@
     </nav>
   </header>
 
+  <!-- SISÄLTÖ -->
   <main>
+    <!-- ETUSIVU -->
     <section id="etusivu" class="page-section">
       <h1 class="hero-title">
         Pitääkö robottisi
@@ -369,9 +354,10 @@
         </span>
         liikkeessä?
       </h1>
-      <div class="subtitle"><span class="cfg-fullname"></span> – Teollisuusrobottien ammattitaitoinen huolto ja kunnossapito 40 vuoden kokemuksella.</div>
+      <!-- CONFIG: YRITYKSEN NIMI -->
+      <div class="subtitle">Avertas Robot Service Oy – Teollisuusrobottien ammattitaitoinen huolto ja kunnossapito 40 vuoden kokemuksella.</div>
 
-      <p><span class="cfg-fullname"></span> varmistaa, että yrityksesi teollisuusrobotit ja automaatiosolut toimivat keskeytyksettä, tehokkaasti ja turvallisesti. Tarjoamme täydelliset elinkaaripalvelut aina ennakoivasta määräaikaishuollosta kriittisiin vikakorjauksiin asti.</p>
+      <p>Avertas Robot Service Oy varmistaa, että yrityksesi teollisuusrobotit ja automaatiosolut toimivat keskeytyksettä, tehokkaasti ja turvallisesti. Tarjoamme täydelliset elinkaaripalvelut aina ennakoivasta määräaikaishuollosta kriittisiin vikakorjauksiin asti.</p>
 
       <div class="brand-badges">
         <span class="brand-badge">Motoman / Yaskawa</span>
@@ -392,13 +378,16 @@
 
       <div class="cta-group">
         <a href="#yhteystiedot" class="cta-button">Tilaa huolto / Pyydä tarjous &rarr;</a>
+        
+        <!-- CONFIG: PUHELINNUMERO (muokkaa tel:000000000 ja näkyvää tekstiä) -->
         <a href="tel:000000000" class="phone-button">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          Huoltopäivystys: <span class="cfg-phone"></span>
+          Huoltopäivystys: 0XX XXX XXXX
         </a>
       </div>
     </section>
 
+    <!-- MÄÄRÄAIKAISHUOLLOT -->
     <section id="maaraaikaishuollot" class="page-section">
       <h2 class="section-title">Määräaikaishuollot</h2>
       <div class="subtitle">Ennakoiva huolto estää kalliit tuotantokatkokset</div>
@@ -420,10 +409,11 @@
       </div>
     </section>
 
+    <!-- VIKAKORJAUKSET -->
     <section id="vikakorjaukset" class="page-section">
       <h2 class="section-title">Vikakorjaukset</h2>
       <div class="subtitle">Robotti pysähtyi? Kutsu paikalle asiantuntija.</div>
-      <p>Kun tuotanto seisoo viallisen robotin vuoksi, jokainen minuutti maksaa. <span class="cfg-fullname"></span> reagoi vikatilanteisiin nopeasti. Kokeneet kenttähuoltoinsinöörimme on varustettu nykyaikaisilla diagnostiikkavälineillä, joilla viat saadaan paikannettua ja korjattua viipymättä.</p>
+      <p>Kun tuotanto seisoo viallisen robotin vuoksi, jokainen minuutti maksaa. Avertas Robot Service Oy reagoi vikatilanteisiin nopeasti. Kokeneet kenttähuoltoinsinöörimme on varustettu nykyaikaisilla diagnostiikkavälineillä, joilla viat saadaan paikannettua ja korjattua viipymättä.</p>
 
       <h3 style="margin-top:1.5rem;">Tarjoamme:</h3>
       <ul class="feature-list">
@@ -434,10 +424,12 @@
       </ul>
 
       <div class="cta-group">
+        <!-- CONFIG: PUHELINNUMERO -->
         <a href="tel:000000000" class="cta-button">Soita huoltopäivystykseen &rarr;</a>
       </div>
     </section>
 
+    <!-- VARAOSAT -->
     <section id="varaosat" class="page-section">
       <h2 class="section-title">Varaosat & Komponentit</h2>
       <div class="subtitle">Alkuperäisosat takaavat robottisi toimintavarmuuden</div>
@@ -448,6 +440,7 @@
       </div>
     </section>
 
+    <!-- OHJELMOINTI JA SIIRROT -->
     <section id="ohjelmointi" class="page-section">
       <h2 class="section-title">Ohjelmointi ja Laitteistojen Siirrot</h2>
       <div class="subtitle">Robotin uusi elämä – Ohjelmointi ja muutostyöt</div>
@@ -463,6 +456,7 @@
       </div>
     </section>
 
+    <!-- KONSULTOINTI -->
     <section id="konsultointi" class="page-section">
       <h2 class="section-title">Konsultointi</h2>
       <div class="subtitle">Laitteistojen hankintojen ja tarvittavan tekniikan konsultointi</div>
@@ -473,35 +467,39 @@
       </div>
     </section>
 
+    <!-- YHTEYSTIEDOT -->
     <section id="yhteystiedot" class="page-section" style="border-bottom: none;">
       <h2 class="section-title">Yhteystiedot</h2>
       <div class="subtitle">Ota yhteyttä ja tilaa robottihuolto</div>
-      <p>Palvelemme teollisuusasiakkaita joustavasti koko Suomen ja Pohjoismaiden alueella. Toimipisteemme sijaitsee Turussa, josta käsin kenttähuoltomme liikkuu joustavasti sinne, missä apua tarvitaan.</p>
+      <p>Palvelemme teollisuusasiakkaita joustavasti koko Suomen ja Pohjoismaiden alueella. Toimipisteemme sijaitsee Turussa, josta käsin kenttähuoltomme liikkuu joustavasti sinne, missä apua tarvidaan.</p>
 
+      <!-- CONFIG: YHTEYSTIEDOT-KORTTI -->
       <div class="contact-card">
         <div class="contact-row">
-          <strong>Yritys:</strong> <span class="cfg-fullname"></span>
+          <strong>Yritys:</strong> Avertas Robot Service Oy
         </div>
         <div class="contact-row">
-          <strong>Käyntiosoite:</strong> <span class="cfg-address"></span>
+          <strong>Käyntiosoite:</strong> Korjasmäentie 7, 20360 Turku
         </div>
         <div class="contact-row">
-          <strong>Huoltotilaukset & Päivystys:</strong> <span class="cfg-phone"></span>
+          <strong>Huoltotilaukset & Päivystys:</strong> 0XX XXX XXXX
         </div>
         <div class="contact-row">
-          <strong>Sähköposti:</strong> <span class="cfg-email"></span>
+          <strong>Sähköposti:</strong> huolto@avertas.fi
         </div>
       </div>
     </section>
   </main>
 
+  <!-- LEIJUVA PÄIVYSTYSNAPPI -->
   <div class="floating-badge">
     <div class="status-dot"></div>
     <div class="badge-content">
       <span class="badge-label">24/7 Päivystys</span>
+      <!-- CONFIG: LEIJUVA NUMERO -->
       <a href="tel:000000000" class="badge-phone">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        <span class="cfg-phone"></span>
+        0XX XXX XXXX
       </a>
     </div>
   </div>
