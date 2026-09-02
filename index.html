@@ -188,14 +188,14 @@ CSS
       background-color: var(--primary-orange-hover);
     }
 
-    .phone-button {
+.phone-button {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.6rem;
-      background-color: #ffffff;
-      border: 1px solid var(--border-color);
-      color: var(--text-dark);
+      background-color: var(--primary-orange);
+      border: 1px solid var(--primary-orange);
+      color: #ffffff;
       text-decoration: none;
       font-weight: 700;
       font-size: 0.85rem;
@@ -204,6 +204,12 @@ CSS
       padding: 0.85rem 1.2rem;
       border-radius: 4px;
       flex: 1;
+      transition: background-color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .phone-button:hover {
+      background-color: var(--primary-orange-hover);
+      border-color: var(--primary-orange-hover);
     }
 
     .brand-badges {
