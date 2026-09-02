@@ -29,6 +29,9 @@
       font-family: 'Inter', sans-serif;
       color: var(--text-dark);
       line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     h1, h2, h3, .logo-text {
@@ -82,6 +85,8 @@
       max-width: 900px;
       margin: 0 auto;
       padding: 3rem 1.5rem 6rem 1.5rem;
+      flex: 1;
+      width: 100%;
     }
 
     .section-title {
@@ -106,68 +111,133 @@
       color: var(--text-muted);
     }
 
-    .contact-card {
-      background-color: var(--bg-light);
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 6px;
-      margin-top: 1.5rem;
+    footer {
+      border-top: 3px solid var(--primary-orange);
+      box-shadow: 0 -4px 14px rgba(232, 83, 36, 0.25);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      background-color: #ffffff;
     }
 
-    .contact-row {
-      margin-bottom: 1rem;
-    }
-
-    .contact-row strong {
+    footer p {
+      margin-bottom: 0.3rem;
       color: var(--text-dark);
-      display: inline-block;
-      width: 200px;
+      font-size: 0.9rem;
     }
 
-    .floating-badge {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      z-index: 1000;
-      background: #ffffff;
-      border: 2px solid #f8c2b2;
-      border-right: none;
-      border-radius: 8px 0 0 8px;
-      padding: 0.8rem 1rem;
-      box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.15);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+    footer a {
+      color: var(--text-dark);
+      text-decoration: none;
     }
 
-    .status-dot {
-      width: 10px;
-      height: 10px;
-      background-color: var(--primary-orange);
-      border-radius: 50%;
+    footer a:hover {
+      color: var(--primary-orange);
     }
 
-    .badge-content {
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    .team-card {
       display: flex;
       flex-direction: column;
+      border: 3px solid var(--primary-orange);
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(232, 83, 36, 0.5), 0 0 30px rgba(232, 83, 36, 0.25);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .badge-label {
-      font-size: 0.65rem;
+    .team-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 22px rgba(232, 83, 36, 0.75), 0 0 45px rgba(232, 83, 36, 0.35);
+    }
+
+    .team-img {
+      width: 100%;
+      aspect-ratio: 5 / 8;
+      object-fit: cover;
+      display: block;
+      border-bottom: 3px solid var(--primary-orange);
+    }
+
+    .team-info {
+      padding: 0.85rem 0.5rem;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      flex: 1;
+    }
+
+    .team-name {
+      font-weight: 800;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+      line-height: 1.25;
+      text-align: center;
+      width: 100%;
+    }
+
+    .team-role {
+      font-weight: 500;
       color: var(--text-muted);
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .badge-phone {
+      font-size: 0.85rem;
+      line-height: 1.25;
+      min-height: 2.2rem;
       display: flex;
       align-items: center;
-      gap: 0.4rem;
-      font-size: 0.95rem;
-      font-weight: 800;
+      justify-content: center;
+      text-align: center;
+      margin-top: 0.2rem;
+      width: 100%;
+    }
+
+    .team-phone {
       color: var(--primary-orange);
       text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .team-phone:hover {
+      color: var(--primary-orange-hover);
+      text-decoration: underline;
+    }
+
+    .floating-cta {
+      position: fixed;
+      bottom: 7rem;
+      right: 2rem;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: var(--primary-orange);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 0 15px rgba(232, 83, 36, 0.5);
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .floating-cta:hover {
+      background-color: var(--primary-orange-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(232, 83, 36, 0.8);
     }
 
     @media (max-width: 768px) {
@@ -182,9 +252,16 @@
         gap: 0.8rem;
       }
 
-      .contact-row strong {
-        display: block;
-        width: 100%;
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .floating-cta {
+        bottom: 4rem;
+        right: 1rem;
+        padding: 0.75rem 1.1rem;
+        font-size: 0.85rem;
       }
     }
   </style>
@@ -212,35 +289,65 @@
       <div class="subtitle">Ota yhteyttä ja tilaa robottihuolto</div>
       <p>Palvelemme teollisuusasiakkaita joustavasti koko Suomen ja Pohjoismaiden alueella. Toimipisteemme sijaitsee Turussa, josta käsin kenttähuoltomme liikkuu joustavasti sinne, missä apua tarvitaan.</p>
 
-      <div class="contact-card">
-        <div class="contact-row">
-          <strong>Yritys:</strong> Avertas Robot Service Oy
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="images/niko.png" alt="Niko Piilinen" class="team-img">
+          <div class="team-info">
+            <div class="team-name">Niko<br>Piilinen</div>
+            <div class="team-role">Toimitusjohtaja</div>
+            <a href="tel:0453534850" class="team-phone">045 353 4850</a>
+          </div>
         </div>
-        <div class="contact-row">
-          <strong>Käyntiosoite:</strong> Korjausmäentie 7, 20360 Turku
+        <div class="team-card">
+          <img src="images/ari.png" alt="Ari Laukkanen" class="team-img">
+          <div class="team-info">
+            <div class="team-name">Ari<br>Laukkanen</div>
+            <div class="team-role">Vanhempi neuvonantaja</div>
+            <a href="tel:0400937789" class="team-phone">0400 937 789</a>
+          </div>
         </div>
-        <div class="contact-row">
-          <strong>Huoltotilaukset & Päivystys:</strong> 0XX XXX XXXX
+        <div class="team-card">
+          <img src="images/rami.png" alt="Rami Saari" class="team-img">
+          <div class="team-info">
+            <div class="team-name">Rami<br>Saari</div>
+            <div class="team-role">Talousjohtaja</div>
+            <a href="tel:0503726233" class="team-phone">050 372 6233</a>
+          </div>
         </div>
-        <div class="contact-row">
-          <strong>Sähköposti:</strong> huolto@avertas.fi
+        <div class="team-card">
+          <img src="images/matilda.png" alt="Matilda Laukkanen" class="team-img">
+          <div class="team-info">
+            <div class="team-name">Matilda<br>Laukkanen</div>
+            <div class="team-role">Huoltopäällikkö</div>
+            <a href="tel:0407373450" class="team-phone">040 737 3450</a>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="images/pyry.png" alt="Pyry Laukkanen" class="team-img">
+          <div class="team-info">
+            <div class="team-name">Pyry<br>Laukkanen</div>
+            <div class="team-role">Robotiikkainsinööri</div>
+            <a href="tel:0504211300" class="team-phone">050 421 1300</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="floating-badge">
-    <div class="status-dot"></div>
-    <div class="badge-content">
-      <span class="badge-label">Päivystys</span>
-      <a href="tel:000000000" class="badge-phone">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        0XX XXX XXXX
-      </a>
-    </div>
-  </div>
+  <a href="tel:0453534850" class="floating-cta">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+    <span>Huoltopäivystys: 045 353 4850</span>
+  </a>
+
+  <footer>
+    <p><strong>Avertas Robot Service Oy</strong></p>
+    <p>Korjausmäentie 7, 20360 Turku</p>
+    <p>045 353 4850</p>
+    <p><a href="mailto:huolto@avertas.fi">huolto@avertas.fi</a></p>
+    <p>Y-tunnus: 3648495-9</p>
+  </footer>
 
 </body>
 </html>
