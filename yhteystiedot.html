@@ -82,7 +82,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 56.25rem;
       margin: 0 auto;
       padding: 3rem 1.5rem 6rem 1.5rem;
       flex: 1;
@@ -262,6 +262,18 @@
         right: 1rem;
         padding: 0.75rem 1.1rem;
         font-size: 0.85rem;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      html {
+        font-size: calc(16px + (100vw - 1920px) / 120);
+      }
+    }
+
+    @media (min-width: 2560px) {
+      html {
+        font-size: 21.333px;
       }
     }
   </style>

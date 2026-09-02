@@ -18,14 +18,14 @@
     nav { display: flex; gap: 1.2rem; align-items: center; }
     nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
     nav a:hover, nav a.active { color: var(--primary-orange); }
-    main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 6rem 1.5rem; flex: 1; width: 100%; }
+    main { max-width: 56.25rem; margin: 0 auto; padding: 3rem 1.5rem 6rem 1.5rem; flex: 1; width: 100%; }
     .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-orange); padding-bottom: 0.5rem; display: inline-block; }
     .subtitle { font-size: 1.2rem; color: var(--text-dark); font-weight: 600; margin-bottom: 1.5rem; }
     p { margin-bottom: 1.2rem; color: var(--text-muted); }
     ul.feature-list { list-style: none; margin: 1.5rem 0; }
     ul.feature-list li { position: relative; padding-left: 1.8rem; margin-bottom: 0.8rem; color: var(--text-dark); font-weight: 500; }
     ul.feature-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary-orange); font-weight: bold; }
-    .cta-group { display: flex; flex-direction: column; margin-top: 2rem; max-width: 380px; }
+    .cta-group { display: flex; flex-direction: column; margin-top: 2rem; max-width: 23.75rem; }
     .cta-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; background-color: var(--primary-orange); color: #ffffff; text-decoration: none; padding: 1rem 1.5rem; border-radius: 4px; transition: background-color 0.2s ease; border: none; cursor: pointer; }
     .cta-button:hover { background-color: var(--primary-orange-hover); }
     .cta-title { font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -77,6 +77,16 @@
       header { flex-direction: column; align-items: flex-start; gap: 1rem; } 
       nav { flex-wrap: wrap; gap: 0.8rem; }
       .floating-cta { bottom: 4rem; right: 1rem; padding: 0.75rem 1.1rem; font-size: 0.85rem; }
+    }
+    @media (min-width: 1920px) {
+      html {
+        font-size: calc(16px + (100vw - 1920px) / 120);
+      }
+    }
+    @media (min-width: 2560px) {
+      html {
+        font-size: 21.333px;
+      }
     }
   </style>
 </head>
