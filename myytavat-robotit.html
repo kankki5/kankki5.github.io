@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Myytävät robotit – Avertas Robot Service Oy</title>
+  <title>Myytävät Robotit – Avertas Robot Service Oy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -69,7 +69,52 @@
       line-height: 1.25;
       text-align: center;
     }
-    .cta-group { display: flex; flex-direction: column; margin-top: 2rem; max-width: 22.5rem; }
+    .robot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 2.2rem 0;
+    }
+    .robot-card {
+      display: flex;
+      flex-direction: column;
+      border: 3px solid var(--primary-orange);
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(232, 83, 36, 0.5), 0 0 30px rgba(232, 83, 36, 0.25);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      min-width: 0;
+    }
+    .robot-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 22px rgba(232, 83, 36, 0.75), 0 0 45px rgba(232, 83, 36, 0.35);
+    }
+    .robot-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-bottom: 3px solid var(--primary-orange);
+    }
+    .robot-info {
+      padding: 0.9rem 0.5rem;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+    .robot-name {
+      font-weight: 800;
+      color: var(--text-dark);
+      font-size: 1.1rem;
+      line-height: 1.3;
+      text-align: center;
+    }
+    .cta-group { display: flex; flex-direction: column; margin-top: 1rem; max-width: 22.5rem; }
     .cta-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; background-color: var(--primary-orange); color: #ffffff; text-decoration: none; padding: 1rem 1.5rem; border-radius: 4px; transition: background-color 0.2s ease; border: none; cursor: pointer; }
     .cta-button:hover { background-color: var(--primary-orange-hover); }
     .cta-title { font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -124,6 +169,13 @@
       .hero-banner { min-height: 10rem; }
       .hero-banner-overlay { padding: 1.5rem 1.2rem; background: transparent; }
       .hero-banner-title { font-size: 1.5rem; }
+      .robot-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        max-width: 24rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
       .floating-cta { bottom: 4rem; right: 1rem; padding: 0.75rem 1.1rem; font-size: 0.85rem; }
     }
     @media (min-width: 1920px) {
@@ -149,7 +201,7 @@
       <a href="varaosat.html">Varaosat</a>
       <a href="ohjelmointi.html">Ohjelmointi & Siirrot</a>
       <a href="konsultointi.html">Konsultointi</a>
-      <a href="myytavat-robotit.html" class="active">Myytävät robotit</a>
+      <a href="myytavat-robotit.html" class="active">Myytävät Robotit</a>
       <a href="yhteystiedot.html">Yhteystiedot</a>
     </nav>
   </header>
@@ -157,9 +209,9 @@
   <main>
     <section class="page-section">
       <div class="hero-banner">
-        <img src="images/myytavat-robotit.png" alt="Myytävät robotit" class="hero-banner-img">
+        <img src="images/myytavat-robotit.png" alt="Myytävät Robotit" class="hero-banner-img">
         <div class="hero-banner-overlay">
-          <h2 class="hero-banner-title">Myytävät robotit</h2>
+          <h2 class="hero-banner-title">Myytävät Robotit</h2>
         </div>
       </div>
 
@@ -173,6 +225,27 @@
         <li><strong>Avaimet käteen -ratkaisut:</strong> Kauttamme saat myös ohjelmoinnin, räätälöinnin, käyttöönoton sekä jatkuvan huoltopalvelun.</li>
         <li><strong>Kustannustehokas vaihtoehto:</strong> Säästä merkittävästi investointikustannuksissa ilman kompromisseja luotettavuudessa.</li>
       </ul>
+
+      <div class="robot-grid">
+        <div class="robot-card">
+          <img src="images/testirobotti1.png" alt="Testi robotti 1" class="robot-img">
+          <div class="robot-info">
+            <div class="robot-name">Testi robotti 1</div>
+          </div>
+        </div>
+        <div class="robot-card">
+          <img src="images/testirobotti2.png" alt="Testi robotti 2" class="robot-img">
+          <div class="robot-info">
+            <div class="robot-name">Testi robotti 2</div>
+          </div>
+        </div>
+        <div class="robot-card">
+          <img src="images/testirobotti3.png" alt="Testi robotti 3" class="robot-img">
+          <div class="robot-info">
+            <div class="robot-name">Testi robotti 3</div>
+          </div>
+        </div>
+      </div>
 
       <div class="cta-group">
         <a href="tel:0453534850" class="cta-button">
