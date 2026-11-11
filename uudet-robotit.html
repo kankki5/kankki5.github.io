@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uudet Robotit – Avertas Robot Service Oy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary-orange: #e85324; --primary-orange-hover: #d04316; --text-dark: #111111; --text-muted: #555555; --border-color: #e5e5e5; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+    h1, h2, h3, .logo-text { font-family: 'Ubuntu', sans-serif; }
+    header { position: sticky; top: 0; background-color: #ffffff; z-index: 900; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.03); line-height: 1.6; }
+    .logo-container { text-decoration: none; display: flex; align-items: center; justify-content: center; }
+    .logo-text { font-weight: 700; font-size: 1.75rem; color: var(--primary-orange); text-transform: none; text-align: center; }
+    nav { display: flex; gap: 1.4rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--primary-orange); }
+    main { max-width: 56.25rem; margin: 0 auto; padding: 3rem 1.5rem 6rem 1.5rem; flex: 1; width: 100%; }
+    .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--text-dark); border-bottom: 2px solid var(--primary-orange); padding-bottom: 0.5rem; display: inline-block; }
+    .subtitle { font-size: 1.2rem; color: var(--text-dark); font-weight: 600; margin-bottom: 1.5rem; }
+    p { margin-bottom: 1.2rem; color: var(--text-muted); }
+    ul.feature-list { list-style: none; margin: 1.5rem 0; }
+    ul.feature-list li { position: relative; padding-left: 1.8rem; margin-bottom: 0.8rem; color: var(--text-dark); font-weight: 500; }
+    ul.feature-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary-orange); font-weight: bold; }
+    .hero-banner {
+      position: relative;
+      border: 3px solid var(--primary-orange);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(232, 83, 36, 0.5), 0 0 30px rgba(232, 83, 36, 0.25);
+      background-color: #ffffff;
+      min-height: 16rem;
+      display: flex;
+      align-items: center;
+    }
+    .hero-banner-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      filter: grayscale(100%);
+    }
+    .hero-banner-overlay {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      padding: 2.5rem 2.5rem;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-banner-title {
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--primary-orange);
+      margin: 0;
+      text-shadow: 0 0 18px rgba(232, 83, 36, 0.9), 0 0 35px rgba(232, 83, 36, 0.5), 0 2px 5px rgba(0, 0, 0, 0.9), 0 0 3px rgba(0, 0, 0, 0.9);
+      line-height: 1.25;
+      text-align: center;
+    }
+    .brand-badges {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0 2rem 0;
+      align-items: center;
+      justify-content: center;
+    }
+    .cta-group { display: flex; flex-direction: column; margin-top: 2rem; max-width: 22.5rem; }
+    .cta-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; background-color: var(--primary-orange); color: #ffffff; text-decoration: none; padding: 1rem 1.5rem; border-radius: 4px; transition: background-color 0.2s ease; border: none; cursor: pointer; }
+    .cta-button:hover { background-color: var(--primary-orange-hover); }
+    .cta-title { font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .cta-button .cta-phone { display: flex; align-items: center; justify-content: center; gap: 0.45rem; color: #ffffff; font-weight: 700; font-size: 1.05rem; }
+    footer {
+      border-top: 3px solid var(--primary-orange);
+      box-shadow: 0 -4px 14px rgba(232, 83, 36, 0.25);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      background-color: #ffffff;
+    }
+    footer p {
+      margin-bottom: 0.3rem;
+      color: var(--text-dark);
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: var(--primary-orange);
+    }
+    .floating-cta {
+      position: fixed;
+      bottom: 7rem;
+      right: 2rem;
+      z-index: 9999;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: var(--primary-orange);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 0 15px rgba(232, 83, 36, 0.5);
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .floating-cta:hover {
+      background-color: var(--primary-orange-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(232, 83, 36, 0.8);
+    }
+    @media (max-width: 768px) { 
+      header { padding: 0.85rem 1rem; gap: 0.6rem; } 
+      .logo-text { font-size: 1.35rem; }
+      nav { gap: 0.6rem 0.9rem; justify-content: center; }
+      .hero-banner { min-height: 10rem; }
+      .hero-banner-overlay { padding: 1.5rem 1.2rem; background: transparent; }
+      .hero-banner-title { font-size: 1.5rem; }
+      .floating-cta { bottom: 4rem; right: 1rem; padding: 0.75rem 1.1rem; font-size: 0.85rem; }
+    }
+    @media (min-width: 1920px) {
+      html {
+        font-size: calc(16px + (100vw - 1920px) / 120);
+      }
+    }
+    @media (min-width: 2560px) {
+      html {
+        font-size: 21.333px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo-container"><div class="logo-text">Avertas Robot Service Oy</div></a>
+    <nav>
+      <a href="index.html">Etusivu</a>
+      <a href="maaraaikaishuollot.html">Määräaikaishuollot</a>
+      <a href="vikakorjaukset.html">Vikakorjaukset</a>
+      <a href="varaosat.html">Varaosat</a>
+      <a href="ohjelmointi.html">Ohjelmointi & Siirrot</a>
+      <a href="konsultointi.html">Konsultointi</a>
+      <a href="uudet-robotit.html" class="active">Uudet Robotit</a>
+      <a href="kaytetyt-robotit.html">Käytetyt Robotit</a>
+      <a href="yhteystiedot.html">Yhteystiedot</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <div class="hero-banner">
+        <img src="images/myytavat-robotit.png" alt="Uudet Robotit" class="hero-banner-img">
+        <div class="hero-banner-overlay">
+          <h2 class="hero-banner-title">Uudet Robotit</h2>
+        </div>
+      </div>
+
+      <div class="subtitle">Huipputason suorituskykyä ja uusinta teknologiaa tuotantoon</div>
+      <p>Toimitamme uudet teollisuusrobotit ja räätälöidyt robottisolut avaimet käteen -kokonaisuuksina teollisuuden moninaisiin tarpeisiin. Teemme tiivistä yhteistyötä alan johtavien robottivalmistajien, kuten Yaskawan, KUKAn ja FANUCin kanssa.</p>
+      <p>Uuden robotin hankinta takaa huippuluokan tarkkuuden, parhaan mahdollisen energiatehokkuuden sekä täyden tehdastakuun ja valmistajan virallisen tuen. Asiantuntijamme auttavat sinua valitsemaan juuri oikean laitteiston ja vastaavat tarvittaessa koko toimituksesta aina layout-suunnittelusta, mekaniikasta ja turvalaitteista ohjelmointiin sekä käyttöönottoon saakka.</p>
+
+      <div class="brand-badges">
+        <img src="images/Yaskawa.png" alt="Yaskawa logo" style="height: 10.5rem; max-width: 100%; object-fit: contain; transform: translateY(1px);">
+        <img src="images/KUKA.png" alt="KUKA logo" style="height: 7.5rem; max-width: 100%; object-fit: contain;">
+        <img src="images/FANUC.png" alt="FANUC logo" style="height: 7.5rem; max-width: 100%; object-fit: contain;">
+      </div>
+
+      <ul class="feature-list">
+        <li><strong>Johtavat valmistajat:</strong> Kauttamme saat mm. Yaskawa-, KUKA- ja FANUC-teollisuusrobotit.</li>
+        <li><strong>Täysi tehdastakuu:</strong> Uusille laitteille myönnetään valmistajan virallinen takuu ja täysi tuki.</li>
+        <li><strong>Avaimet käteen -ratkaisut:</strong> Solujen suunnittelu, tarttujat, turvalaitteet, ohjelmointi ja käyttöönotto.</li>
+        <li><strong>Elinkaaripalvelut:</strong> Määräaikaishuollot, vikakorjaukset, varaosat ja koulutus suoraan meiltä koko elinkaaren ajan.</li>
+      </ul>
+
+      <div class="cta-group">
+        <a href="tel:0400937789" class="cta-button">
+          <span class="cta-title">Kysy tarjousta uudesta robotista</span>
+          <span class="cta-phone">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            0400 937 789
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <a href="tel:0453534850" class="floating-cta">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+    </svg>
+    <span>Huoltopäivystys: 045 353 4850</span>
+  </a>
+
+  <footer>
+    <p><strong>Avertas Robot Service Oy</strong></p>
+    <p>Kristiinankatu 5 B 11, 20100 Turku</p>
+    <p>045 353 4850</p>
+    <p><a href="mailto:huolto@avertas.fi">huolto@avertas.fi</a></p>
+    <p>Y-tunnus: 3648495-9</p>
+  </footer>
+
+</body>
+</html>
