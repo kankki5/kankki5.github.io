@@ -77,10 +77,10 @@
       align-items: center;
       justify-content: center;
     }
-    .cta-group { display: flex; flex-direction: column; margin-top: 2rem; max-width: 22.5rem; }
-    .cta-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; background-color: var(--primary-orange); color: #ffffff; text-decoration: none; padding: 1rem 1.5rem; border-radius: 4px; transition: background-color 0.2s ease; border: none; cursor: pointer; }
+    .cta-group { display: flex; flex-direction: column; margin-top: 2rem; max-width: 28rem; width: fit-content; }
+    .cta-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.35rem; background-color: var(--primary-orange); color: #ffffff; text-decoration: none; padding: 1rem 1.6rem; border-radius: 4px; transition: background-color 0.2s ease; border: none; cursor: pointer; }
     .cta-button:hover { background-color: var(--primary-orange-hover); }
-    .cta-title { font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .cta-title { font-weight: 800; font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
     .cta-button .cta-phone { display: flex; align-items: center; justify-content: center; gap: 0.45rem; color: #ffffff; font-weight: 700; font-size: 1.05rem; }
     footer {
       border-top: 3px solid var(--primary-orange);
@@ -132,7 +132,13 @@
       .hero-banner { min-height: 10rem; }
       .hero-banner-overlay { padding: 1.5rem 1.2rem; background: transparent; }
       .hero-banner-title { font-size: 1.5rem; }
+      .cta-group { max-width: 100%; width: 100%; }
+      .cta-button { padding: 0.9rem 0.8rem; }
+      .cta-title { font-size: 0.85rem; }
       .floating-cta { bottom: 4rem; right: 1rem; padding: 0.75rem 1.1rem; font-size: 0.85rem; }
+    }
+    @media (max-width: 400px) {
+      .cta-title { font-size: 0.76rem; }
     }
     @media (min-width: 1920px) {
       html {
@@ -212,6 +218,8 @@
 
   <footer>
     <p><strong>Avertas Robot Service Oy</strong></p>
+    <p>Korjasmäenkatu 7, 20360 Turku</p>
+    <p>Laskutusosoite:</p>
     <p>Kristiinankatu 5 B 11, 20100 Turku</p>
     <p>045 353 4850</p>
     <p><a href="mailto:huolto@avertas.fi">huolto@avertas.fi</a></p>
